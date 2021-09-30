@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "504398523173",
+    "project_id": "passmoto-staging",
+    "storage_bucket": "passmoto-staging.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504398523173:android:aa6648494d311698f088cc",
+        "android_client_info": {
+          "package_name": "com.app.pass.moto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504398523173-t8hsmba2imtcic3p824sr105igcmtqtb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxV1p-qe0LALhntirUAoyD6Eul1-tr204"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504398523173-t8hsmba2imtcic3p824sr105igcmtqtb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504398523173:android:1faab4cb4ef9d63ef088cc",
+        "android_client_info": {
+          "package_name": "com.example.pass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504398523173-t8hsmba2imtcic3p824sr105igcmtqtb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxV1p-qe0LALhntirUAoyD6Eul1-tr204"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504398523173-t8hsmba2imtcic3p824sr105igcmtqtb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504398523173:android:08df9b925ec65782f088cc",
+        "android_client_info": {
+          "package_name": "com.example.pass_collection_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504398523173-t8hsmba2imtcic3p824sr105igcmtqtb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxV1p-qe0LALhntirUAoyD6Eul1-tr204"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504398523173-t8hsmba2imtcic3p824sr105igcmtqtb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
