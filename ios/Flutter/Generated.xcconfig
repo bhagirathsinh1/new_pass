@@ -1,8 +1,8 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/opt/homebrew/Caskroom/flutter/2.0.6/flutter
-FLUTTER_APPLICATION_PATH=/Users/jagdish/Desktop/work/pass-app
+FLUTTER_ROOT=D:\All software\Flutter\flutter_windows_2.2.3-stable\flutter
+FLUTTER_APPLICATION_PATH=E:\new flutter project\pass-app-main
 COCOAPODS_PARALLEL_CODE_SIGN=true
-FLUTTER_TARGET=lib/main.dart
+FLUTTER_TARGET=lib\main.dart
 FLUTTER_BUILD_DIR=build
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1

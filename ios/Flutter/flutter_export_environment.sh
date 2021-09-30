@@ -1,9 +1,9 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/opt/homebrew/Caskroom/flutter/2.0.6/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/jagdish/Desktop/work/pass-app"
+export "FLUTTER_ROOT=D:\All software\Flutter\flutter_windows_2.2.3-stable\flutter"
+export "FLUTTER_APPLICATION_PATH=E:\new flutter project\pass-app-main"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
-export "FLUTTER_TARGET=lib/main.dart"
+export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
