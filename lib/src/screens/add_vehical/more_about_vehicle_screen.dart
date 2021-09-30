@@ -126,9 +126,11 @@ class _MoreAboutVehicleState extends State<MoreAboutVehicle> {
   _imgFromGallery(ImageSource imageSource) async {
     List<PickedFile>? imagesTemp = [];
     if (imageSource == ImageSource.gallery) {
+      // ignore: invalid_use_of_visible_for_testing_member
       imagesTemp = await ImagePicker.platform.pickMultiImage();
     } else {
       PickedFile? pickedFile =
+          // ignore: invalid_use_of_visible_for_testing_member
           await ImagePicker.platform.pickImage(source: ImageSource.camera);
       imagesTemp.add(pickedFile!);
     }

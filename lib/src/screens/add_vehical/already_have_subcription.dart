@@ -35,6 +35,7 @@ class _AlreadyHaveSubscriptionState extends State<AlreadyHaveSubscription> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     initialize();

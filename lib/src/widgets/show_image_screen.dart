@@ -423,6 +423,7 @@ class _ShowImageScreenState extends State<ShowImageScreen> {
 
   @override
   void dispose() {
+    // ignore: todo
     // TODO: implement dispose
     if (_videoPlayerController != null) _videoPlayerController!.dispose();
     super.dispose();

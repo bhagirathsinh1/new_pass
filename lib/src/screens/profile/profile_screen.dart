@@ -495,6 +495,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   _imgFrom(ImageSource imgSource) async {
+    // ignore: invalid_use_of_visible_for_testing_member
     images = await ImagePicker.platform.pickImage(
       source: imgSource,
     );
