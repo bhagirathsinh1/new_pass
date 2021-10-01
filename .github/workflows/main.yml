@@ -25,7 +25,7 @@ jobs:
 #     - name: 'Run Test(s)'
 #       run: flutter test
     - name: 'Build Demo Apk'
-      run: flutter clean && flutter build apk --target lib/main_demo.dart --target-platform android-arm --flavor demo
+      run: flutter clean && flutter build apk --target lib/main.dart --target-platform android-arm --flavor demo
     - name: 'Upload Apk'
       uses: wei/curl@v1
       with:
