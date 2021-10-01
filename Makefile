@@ -1,45 +1,58 @@
-GIT_LAST_COMMIT := $(shell git describe --tags --always | sed 's/-/+/' | sed 's/^v//')
-FLUTTER ?= flutter
+ROOT := $(shell git rev-parse --show-toplevel)
+FLUTTER := $(shell which flutter)
+FLUTTER_BIN_DIR := $(shell dirname $(FLUTTER))
+FLUTTER_DIR := $(FLUTTER_BIN_DIR:/bin=)
+DART := $(FLUTTER_BIN_DIR)/cache/dart-sdk/bin/dart
 
-ifneq ($(DRONE_TAG),)
-	VERSION ?= $(subst v,,$(DRONE_TAG))-$(GIT_LAST_COMMIT)
-else
-	ifneq ($(DRONE_BRANCH),)
-		VERSION ?= $(subst release/v,,$(DRONE_BRANCH))-$(GIT_LAST_COMMIT)
-	else
-		VERSION ?= master-$(GIT_LAST_COMMIT)
-	endif
-endif
+.PHONY: analyze
+analyze:
+	$(FLUTTER) analyze
+
+.PHONY: format
+format:
+	$(FLUTTER) format .
 
 .PHONY: test
 test:
 	$(FLUTTER) test
 
-.PHONY: build-all
-build-all: build-release build-debug build-profile
+.PHONY: build-web
+build-web:
+	$(FLUTTER) build web
 
-.PHONY: build-release
-build-release:
-	$(FLUTTER) build apk --release --build-name=$(VERSION) --flavor main
+.PHONY: fetch-master
+fetch-master:
+	$(shell git fetch origin master)
 
-.PHONY: build-debug
-build-debug:
-	$(FLUTTER) build apk --debug --build-name=$(VERSION) --flavor unsigned
+.PHONY: master-branch-check
+master-branch-check: fetch-master
+  ifneq ($(shell git rev-parse --abbrev-ref HEAD),master)
+		$(error Not on master branch, please checkout master)
+  endif
+  ifneq ($(shell git rev-parse HEAD),$(shell git rev-parse origin/master))
+		$(error Your master branch is not up to date with origin/master, please pull before deploying)
+  endif
 
-.PHONY: build-profile
-build-profile:
-	$(FLUTTER) build apk --profile --build-name=$(VERSION) --flavor unsigned
 
-.PHONY: format
-format:
-	$(FLUTTER) format lib
+.PHONY: deploy
+deploy: master-branch-check build-web
+	cp $(ROOT)/gallery/web/favicon.ico $(ROOT)/gallery/build/web/
+	firebase deploy
 
-.PHONY: format-check
-format-check:
-	@diff=$$(flutter format -n lib); \
-	if [ -n "$$diff" ]; then \
-		echo "The following files are not formatted correctly:"; \
-		echo "$${diff}"; \
-		echo "Please run 'make format' and commit the result."; \
-		exit 1; \
-	fi;
+.PHONY: gen-l10n
+gen-l10n:
+	$(DART) $(FLUTTER_DIR)/dev/tools/localization/bin/gen_l10n.dart \
+    --template-arb-file=intl_en_US.arb \
+    --output-localization-file=gallery_localizations.dart \
+    --output-class=GalleryLocalizations
+
+.PHONY: l10n
+l10n: gen-l10n format
+	cd $(ROOT)/l10n_cli/ && $(FLUTTER) pub get
+	$(DART) $(ROOT)/l10n_cli/bin/main.dart
+
+.PHONY: update-code-segments
+update-code-segments:
+	cd $(ROOT)/codeviewer_cli/ && pub get
+	$(DART) $(ROOT)/codeviewer_cli/bin/main.dart
+	$(FLUTTER) format $(ROOT)/gallery/lib/codeviewer/code_segments.dart
