@@ -28,7 +28,7 @@ jobs:
       # - name: Run Tests
       #   run: flutter test
       - name: Build Android App
-        run: flutter build apk --target-platform=android-arm --split-per-abi
+        run: fvm flutter build apk --release --flavor production --dart-define=FLAVOR=production --target lib/main.dart --split-per-abi
 #       - name: Build iOS App
 #         run: |
 #           flutter build ios --no-codesign
