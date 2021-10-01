@@ -28,7 +28,7 @@ jobs:
       # - name: Run Tests
       #   run: flutter test
       - name: Build Android App
-        run: flutter build apk --release --split-per-abi --no-shrink
+        run: flutter build apk --release --split-per-abi --scan
       - name: Build iOS App
         run: |
           flutter build ios --no-codesign
