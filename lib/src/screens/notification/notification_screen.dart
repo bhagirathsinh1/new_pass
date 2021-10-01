@@ -31,10 +31,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     color: Colors.white,
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.only(
-                      topLeft:
-                          Radius.circular(SizeConfig.topLeftRadiousForContainer),
-                      topRight:
-                          Radius.circular(SizeConfig.topRightRadiousForContainer),
+                      topLeft: Radius.circular(
+                          SizeConfig.topLeftRadiousForContainer),
+                      topRight: Radius.circular(
+                          SizeConfig.topRightRadiousForContainer),
                     ),
                   ),
                   height: MediaQuery.of(context).size.height,
