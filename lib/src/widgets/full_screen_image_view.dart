@@ -1,11 +1,11 @@
 import 'dart:io';
 
-import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
+// import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:flutter/material.dart';
 
 class FullScreenPdfView extends StatefulWidget {
-  const FullScreenPdfView({Key? key, required this.path}) : super(key: key);
-  final PDFDocument path;
+  // const FullScreenPdfView({Key? key, required this.path}) : super(key: key);
+  // final PDFDocument path;
 
   @override
   _FullScreenPdfViewState createState() => _FullScreenPdfViewState();
@@ -20,7 +20,7 @@ class _FullScreenPdfViewState extends State<FullScreenPdfView> {
       ),
       body: Container(
         color: Colors.black,
-        child: PDFViewer(document: widget.path, zoomSteps: 1),
+        // child: PDFViewer(document: widget.path, zoomSteps: 1),
       ),
     );
   }
