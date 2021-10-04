@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
+// import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:pass/src/widgets/full_screen_image_view.dart';
 import 'package:pass/themeData.dart';
@@ -62,15 +62,16 @@ class _DrawerlistTileWidgetState extends State<DrawerlistTileWidget> {
                       onPressed: () async {
                         if (widget.fileName.split(".").last.toLowerCase() ==
                             "pdf") {
-                          File file = File(widget.filePath);
-                          PDFDocument document =
-                              await PDFDocument.fromFile(file);
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) =>
-                                  FullScreenPdfView(path: document),
-                            ),
-                          );
+                          // File file = File(widget.filePath);
+                          // PDFDocument document =
+                          //     await PDFDocument.fromFile(file);
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) =>
+                          //         FullScreenPdfView(path: document)
+                          //         ,
+                          //   ),
+                          // );
                         } else if (widget.fileName
                                     .split(".")
                                     .last
