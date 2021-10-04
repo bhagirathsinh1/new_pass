@@ -6,12 +6,6 @@
 
 #import "GeneratedPluginRegistrant.h"
 
-#if __has_include(<advance_pdf_viewer/FlutterPluginPdfViewerPlugin.h>)
-#import <advance_pdf_viewer/FlutterPluginPdfViewerPlugin.h>
-#else
-@import advance_pdf_viewer;
-#endif
-
 #if __has_include(<connectivity/FLTConnectivityPlugin.h>)
 #import <connectivity/FLTConnectivityPlugin.h>
 #else
@@ -105,7 +99,6 @@
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
-  [FlutterPluginPdfViewerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterPluginPdfViewerPlugin"]];
   [FLTConnectivityPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTConnectivityPlugin"]];
   [FilePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FilePickerPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
