@@ -14,6 +14,11 @@ buildscript {
         classpath 'com.google.gms:google-services:4.3.10'
     }
 }
+task generateVersionTxt {
+    doLast {
+        file("./version.txt").text = android.defaultConfig.versionName
+    }
+}
 
 allprojects {
     repositories {
