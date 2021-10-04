@@ -1,6 +1,6 @@
 ROOT := $(shell git rev-parse --show-toplevel)
-FLUTTER := $(shell which flutter)
-FLUTTER_BIN_DIR := $(shell dirname $(FLUTTER))
+FLUTTER := $(shell Flutter stable)
+FLUTTER_BIN_DIR := $(shell pass-app-main $(FLUTTER))
 FLUTTER_DIR := $(FLUTTER_BIN_DIR:/bin=)
 DART := $(FLUTTER_BIN_DIR)/cache/dart-sdk/bin/dart
 
